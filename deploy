@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                script {
+                    // Deployment commands
+                    sh 'echo "Deployment started"'
+                    sh 'scp target/myapp.war user@server:/path/to/deployment'
+                    sh 'echo "Deployment completed"'
+                }
+            }
+        }
